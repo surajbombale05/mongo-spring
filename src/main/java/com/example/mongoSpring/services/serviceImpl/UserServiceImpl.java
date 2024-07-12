@@ -25,7 +25,11 @@ public class UserServiceImpl implements UserServices {
 
     @Override
     public User saveUser(User user) {
-        return userRepo.save(user);
+        if (user.getPassword().equals(user.getReEnterPassword())) {
+            return userRepo.save(user);
+        } else {
+             throw new IllegalArgumentException("Passwords do not match");
+        }
     }
 
     @Override
@@ -41,6 +45,6 @@ public class UserServiceImpl implements UserServices {
     public void deleteUserById(String id) {
         if (userRepo.existsById(id)) {
             userRepo.deleteById(id);
-        } 
+        }
     }
 }
