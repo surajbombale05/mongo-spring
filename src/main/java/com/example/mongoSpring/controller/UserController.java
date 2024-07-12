@@ -6,6 +6,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -38,13 +39,14 @@ public class UserController {
         return userServices.saveUser(user);
     }
 
-    @PutMapping
-    public String updateUserById(){
-        return "Get all users";
+    @PutMapping("/{id}")
+    public User updateUserById(@PathVariable String id , @RequestBody User user){
+        return userServices.updateUserById(user, id);
     }
 
-    // @DeleteMapping("users")
-    // public String deleteUserById(){
-    //     return "Get all users";
-    // }
+    @DeleteMapping("/{id}")
+    public String deleteUserById(@PathVariable String id){
+         userServices.deleteUserById(id);
+         return "User deleted successfully";
+    }
 }
