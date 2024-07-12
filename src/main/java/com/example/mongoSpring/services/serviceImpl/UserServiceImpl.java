@@ -47,4 +47,9 @@ public class UserServiceImpl implements UserServices {
             userRepo.deleteById(id);
         }
     }
+    public User findUserById(String id){
+          return userRepo.findById(id).orElse(null);
+    }
+
+  
 }
