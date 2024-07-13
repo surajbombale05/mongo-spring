@@ -2,7 +2,6 @@ package com.example.mongoSpring.controller;
 
 import java.util.List;
 
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,7 +21,7 @@ import com.example.mongoSpring.services.UserServices;
 @RequestMapping("api/users")
 public class UserController {
     private final UserServices userServices;
-    
+
     @Autowired
     public UserController(UserServices userServices) {
         this.userServices = userServices;
@@ -70,4 +69,3 @@ public class UserController {
         }
     }
 }
-

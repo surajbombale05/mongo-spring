@@ -50,6 +50,4 @@ public class UserServiceImpl implements UserServices {
     public User findUserById(String id){
           return userRepo.findById(id).orElse(null);
     }
-
-  
 }
