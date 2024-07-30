@@ -20,7 +20,7 @@ import com.example.mongoSpring.services.UserServices;
 @RestController
 @RequestMapping("api/users")
 public class UserController {
-    private final UserServices userServices;
+         final UserServices userServices;
 
     @Autowired
     public UserController(UserServices userServices) {
