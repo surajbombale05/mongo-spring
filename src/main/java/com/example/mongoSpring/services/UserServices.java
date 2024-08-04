@@ -5,7 +5,7 @@ import java.util.List;
 import com.example.mongoSpring.model.User;
 
 public interface UserServices {
-    public List<User> getAllUsers();
+    public List<User> getAllUsers();    
     public User findUserById(String id);
     public User saveUser(User user);
     public User updateUserById(User user,String id);
